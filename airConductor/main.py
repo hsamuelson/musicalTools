@@ -21,8 +21,6 @@ import math
 import pygame
 import pygame.midi
 import time
-import scipy
-import sklearn
 from time import sleep
 import random
 
