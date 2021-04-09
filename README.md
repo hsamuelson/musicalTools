@@ -16,6 +16,7 @@ Simple spectrogram calculation and convolution with .wav files. <br>
 ### Requirements
 ````matplotlib```` <br>
 ````numpy```` <br>
+````scipy```` <br>
 ````tkinter```` <br>
 ### Running
 To run ````python convolve.py```` or ````python spectrogram.py````
