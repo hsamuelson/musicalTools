@@ -10,6 +10,8 @@ Uses computer camera, to track motion and generate sounds given the total moveme
 ### Running
 To run ````python main.py````
 
+<br>
+<br>
 
 ## Spectral
 Simple spectrogram calculation and convolution with .wav files. <br>
@@ -21,6 +23,8 @@ Simple spectrogram calculation and convolution with .wav files. <br>
 ### Running
 To run ````python convolve.py```` or ````python spectrogram.py````
 
+<br>
+<br>
 
 ## ThroatSinging
 A PureData patch that uses analog microphone input to drive a synthesizer. Includes sine and filtered noise synths, as well as the option to output MIDI through your computer's driver (e.g. IAC Driver bus). Intended to be used with a contact mic attached to the throat, so that by humming you can control any MIDI synth in your DAW of choice. Be sure to enable MIDI output through your system MIDI driver from PD's preferences.<br>
