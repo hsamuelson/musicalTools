@@ -31,3 +31,6 @@ A PureData patch that uses analog microphone input to drive a synthesizer. Inclu
 
 ### Requirements
 ````cyclone```` <br>
+
+## Stereo Interpolator
+A Pure Data patch that can take in a total of 10 audio files (5 per channel) and interpolates them using the x and y coordinates of the mouse. The interpolation is done simply through mixing volume of adjacent samples as they play and loop. The samples must be wave files. The x coordinate controls one channel and the y coordinate controls the other channel. Pressing "1" starts mouse movement being processed, while pressing "2" will stop mouse movement from being processed. This can be used to make more abrupt, less smooth transitions by turning off reading the mouse movement, then moving it to a new spot and turning it back on. Also, the start and stop bang buttons turn on and off audio.
