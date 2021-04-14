@@ -1,0 +1,39 @@
+#N canvas 3 25 757 643 12;
+#X floatatom 20 250 5 0 0 0 - - -, f 5;
+#X obj 100 170 expr if($f1 < 0.25 \, $f1 / 0.25 \, 1 - ($f1 - 0.25)
+/ 0.25);
+#X obj 100 200 max 0;
+#X floatatom 460 230 5 0 0 0 - - -, f 5;
+#X obj 100 310 max 0;
+#X floatatom 460 340 5 0 0 0 - - -, f 5;
+#X obj 100 270 expr if($f1 < 0.5 \, ($f1 - 0.25) / 0.25 \, 1 - ($f1
+- 0.5) / 0.25);
+#X obj 100 420 max 0;
+#X floatatom 460 450 5 0 0 0 - - -, f 5;
+#X floatatom 460 130 5 0 0 0 - - -, f 5;
+#X floatatom 460 520 5 0 0 0 - - -, f 5;
+#X obj 100 100 expr max(1 - $f1 / 0.25 \, 0);
+#X obj 100 380 expr if($f1 < 0.75 \, ($f1 - 0.5) / 0.25 \, 1 - ($f1
+- 0.75) / 0.25);
+#X obj 100 490 expr max(($f1 - 0.75) / 0.25 \, 0);
+#X obj 20 30 inlet;
+#X obj 640 310 outlet;
+#X connect 0 0 1 0;
+#X connect 0 0 6 0;
+#X connect 0 0 11 0;
+#X connect 0 0 12 0;
+#X connect 0 0 13 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 15 0;
+#X connect 4 0 5 0;
+#X connect 5 0 15 0;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 9 0;
+#X connect 12 0 7 0;
+#X connect 13 0 10 0;
+#X connect 14 0 0 0;
