@@ -1,7 +1,7 @@
 import math
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.fftpack import rfft, irfft
+from scipy import signal
 from scipy.io import wavfile
 
 import os
@@ -39,9 +39,21 @@ if(len(input2.shape)>1):
     input2 = input2[:,0]
 
 nsamples = min(input2.size,input1.size)
+print(nsamples)
 
-outspect = rfft(input1,nsamples) * rfft(input2,nsamples) # convolve
-output = irfft(outspect)
+fs = 1
+
+f1, t1, outspect1 = signal.stft(input1,fs) 
+f2, t2, outspect2 = signal.stft(input2,fs)
+print("t1 = " + str(t1))
+print("t2 = " + str(t2))
+outspect1 = outspect1[:,:min(outspect1.shape[1],outspect2.shape[1])]
+outspect2 = outspect2[:,:min(outspect1.shape[1],outspect2.shape[1])]
+outspect = outspect1 * outspect2 * 100
+t, output = signal.istft(outspect, fs)
+
+# outspect = rfft(input1,nsamples) * rfft(input2,nsamples) # convolve
+# output = irfft(outspect)
 wavfile.write(dir + '/' + 'output.wav', rate, output)
 
 # plot amplitudes
